@@ -8,8 +8,6 @@ defined('DISCONNECTED')? DISCONNECTED : define("DISCONNECTED", false);
  * 
  * This class can be used to connect to external sockets and communicate with the server
  * 
- * @author Tom Reitsma <treitsma@rse.nl>
- * @version 0.6
  */
 
  if(!class_exists('Socket')){
