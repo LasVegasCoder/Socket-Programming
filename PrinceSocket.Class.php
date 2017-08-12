@@ -1,5 +1,11 @@
 <?php
 	defined('PRINCE_SOCKET')or die('no direct connect');
+	/*
+		Desc: Socket Programming Class that can connect to any TCP/IP, UDP host and port, or any socket application interface.
+		Author: Prince Ademola Adeyemi
+		Contact: YourVegasPrince@gmail.com
+		FB:	facebook.com/YourVegasPrince@gmail
+	*/
 	
 	if( !class_exists( 'PrinceSocket' ) )
 	{
@@ -100,10 +106,12 @@
 				
 				if( strlen( $line >= 2 && substr( $line, -2 ) == "\r\n" ||  substr( $line, -1 ) == "\n" ) )
 				{
-					return rtrim( $line );
+					$line = rtrim( $line );
 				}
-				
-				return $line;
+				if( !empty( $line ) )
+				{
+					return $line;
+				}
 			}
 		}
 		
