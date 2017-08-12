@@ -1,4 +1,4 @@
-<pre><?php
+<?php
 
 /**
  * This is an example of how to connect to your local email server.
