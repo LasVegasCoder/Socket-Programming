@@ -36,8 +36,11 @@ if( $socket )
 	{
 		$socket::PrinceCMD( $cmd );
 			
-		$result = $socket::getResponse();			
-		echo $result;
+		$result = $socket::getResponse();	
+		if( !empty($result) )
+		{
+			echo $result;
+		}
 	}
 }
 
