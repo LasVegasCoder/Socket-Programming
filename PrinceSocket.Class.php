@@ -17,6 +17,7 @@
 		private var $_error_str;
 		private var $_persist = false;
 		private var $_timeout = 30;
+		private var $_waittime = 5;
 		
 		private static function __construct()
 		{
@@ -39,6 +40,7 @@
 			$this->_port 		= ( !empty( $port ) ? $port : '' );
 			$pconnect			= ( !empty( $this->_persist ) ? "pfsockopen" : "fsockopen" );
 			$this->_timeout 	= 60;
+			$this->_waittime	= 5;
 			
 			if( $this->_hostname && $this->_port )
 			{
@@ -64,11 +66,22 @@
 			return false;
 		}
 		
-		private function PrinceCMD( $cmd )
+		private function PrinceCMD( $cmd, $timeout = null )
 		{
 			if( $this->_link != false )
 			{
+				if( empty( $cmd ))
+				{
+					return null;
+				}
+				// Set custom wait time for your command, 
+				
+				
+				$this->_waittime = ( $timeout !== null ) ? $timeout : $this->_waittime;
+				// Wait 5 seconds to wait before sending another command... avoiding flood;
+				sleep( $this->_waittime);
 				$cmd 	.= "\r\n";
+				
 				$result = fwrite( $this->_link, $cmd, strlen( $cmd ) );
 				
 				if( $result != '' )
@@ -81,10 +94,12 @@
 			}
 		}
 		
-		public function getResponse()
+		public function getResponse( $time = null )
 		{
+			$this->_waittime = ( $time !== null ) ?  $time :  1;	
 			if( $this->_link )
 			{
+				sleep( $this->_waittime );
 				$response = fread( $this->_link, 2048 );
 				
 				if( $response != '' )
