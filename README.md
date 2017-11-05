@@ -46,10 +46,7 @@ Subtitute the commands with the application's commands
 	$socket::PrinceCMD("RCPT TO: <yourvegasprince@gmail.com>");
 	echo $socket::getResponse();
 	
-	$socket::PrinceCMD("RCPT TO: <yourvegasprince@gmail.com>");
-	echo $socket::getResponse();
-	
 	$socket::PrinceCMD("DATA testing email");
-	echo $socket::getResponse();`
+	echo $socket::getResponse();
 	
 
