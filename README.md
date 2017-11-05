@@ -1,7 +1,7 @@
 
   	PrinceSocket is a Singleton Socket Class written in PHP that is useful for any application.  
   
-  You can connect to virtually any socket application, troubleshoot network devices and more.
+  ###You can connect to virtually any socket application, troubleshoot network devices and more.
 	
 	Usage is very simple. 
   Instantiate the socket class and send the Device Command to it, 
@@ -12,7 +12,8 @@ Note that the Mail server running on port 25.  (Change the port your mail server
 	
 	As a rule of thumb: Never connect to any network or server that you do not own without prior written approval.
 	
-You can use the example below to connect to any socket device or application.  Subtitute the command with the application's command
+You can use the example below to connect to any socket device or application.  
+Subtitute the commands with the application's commands
 	
 	
 	$socket = PrinceSocket::Singleton();
