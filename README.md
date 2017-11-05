@@ -43,7 +43,7 @@ Subtitute the commands with the application's commands
 	$socket::PrinceCMD("MAIL FROM:<user@domain.com>");
 	echo $socket::getResponse();
 	
-	$socket::PrinceCMD("RCPT TO: <yourvegasprince@gmail.com>");
+	$socket::PrinceCMD("RCPT TO: <receiver@domain.com>");
 	echo $socket::getResponse();
 	
 	$socket::PrinceCMD("DATA testing email");
