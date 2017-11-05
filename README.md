@@ -1,7 +1,7 @@
 
   	PrinceSocket is a Singleton Socket Class written in PHP that is useful for any application.  
   
-  ###You can connect to virtually any socket application, troubleshoot network devices and more.
+  You can connect to virtually any socket application, troubleshoot network devices and more.
 	
 	Usage is very simple. 
   Instantiate the socket class and send the Device Command to it, 
